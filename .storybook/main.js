@@ -29,8 +29,6 @@ module.exports = {
 
     config.resolve.extensions.push(".ts", ".tsx", ".mdx");
 
-    console.log(config);
-
     return config;
   },
 };
