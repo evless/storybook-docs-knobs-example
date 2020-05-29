@@ -1,5 +1,7 @@
 import React from "react";
 
-export const Button: React.FC<{ text: string }> = ({ text }) => (
+export type Props = { text: string }
+
+export const Button: React.FC<Props> = ({ text }) => (
   <button>{text}</button>
 );

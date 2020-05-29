@@ -1,8 +1,7 @@
 import React from "react";
 import { Preview } from '@storybook/addon-docs/blocks'
-import { text } from '@storybook/addon-knobs'
 
-import { Text } from ".";
+import { Props, Text } from ".";
 
 import page from './docs.mdx'
 
@@ -12,10 +11,11 @@ export default {
   includeStories: ['Interactive']
 };
 
-export const Interactive = () => <Text text={text('text', 'Text')} color={text('color', 'red')} />;
+export const Interactive = (agrs: Props) => <Text {...agrs} />;
+Interactive.args = { text: 'Text', color: 'red' }
 
 export const PreviewWrapper = () => (
   <Preview>
-    <Interactive />
+    <Interactive {...Interactive.args} />
   </Preview>
 )
